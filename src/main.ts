@@ -19,8 +19,11 @@ async function bootstrap() {
 
   app.useGlobalFilters(new HttpExceptionFilter());
 
-  // Works correctly in both `src/` (dev) and `dist/` (Docker production)
-  const viewsPath = join(__dirname, '..', 'src', 'dashboard', 'views');
+  // Using join(__dirname, ...) ensures assets are found in both dev and production (dist)
+  const viewsPath = join(__dirname, 'dashboard', 'views');
+  const publicPath = join(__dirname, 'dashboard', 'public');
+  
+  app.useStaticAssets(publicPath);
   app.setBaseViewsDir(viewsPath);
   app.setViewEngine('hbs');
 
