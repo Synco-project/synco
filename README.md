@@ -32,8 +32,8 @@
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/lazxdev/keep-alive.git
-cd keep-alive
+git clone https://github.com/Synco-project/synco.git
+cd synco
 ```
 
 **2. Configure your environment**
