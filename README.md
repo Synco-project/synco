@@ -56,11 +56,11 @@ That's it. Open `http://localhost:3000` and sign in.
 | Variable | Default | Description |
 |---|---|---|
 | `PORT` | `3000` | Port the server listens on |
-| `DB_NAME` | `/app/data/keepalive.db` | Path to the SQLite database file |
+| `DB_NAME` | `/app/data/synco.db` | Path to the SQLite database file |
 | `AXIOS_TIMEOUT` | `5000` | HTTP ping timeout in milliseconds |
 | `ADMIN_USERNAME` | `admin` | Dashboard login username |
 | `ADMIN_PASSWORD` | `admin` | Dashboard login password |
-| `JWT_SECRET` | `keepalive_secret_key` | Secret key for signing session tokens |
+| `JWT_SECRET` | `synco_secret_key` | Secret key for signing session tokens |
 | `TELEGRAM_BOT_TOKEN` | (empty) | Bot token obtained from @BotFather |
 | `TELEGRAM_CHAT_ID` | (empty) | Your personal or group chat ID to receive alerts |
 
@@ -115,7 +115,7 @@ npm run start:dev
 | Database | SQLite via TypeORM |
 | Real-time | Socket.io WebSockets |
 | UI/UX | Handlebars (SSR) with Vanilla CSS |
-| HTTP Client | Axios with keepAlive TCP agents |
+| HTTP Client | Axios with synco TCP agents |
 | Auth | JWT via strict HTTP-only cookies |
 | Alerts | Telegram HTTP API integration |
 | Container | Docker (multi-stage, non-root `node` user) |

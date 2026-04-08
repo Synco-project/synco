@@ -1,9 +1,9 @@
 version: '1.0'
 
 services:
-  keepalive:
+  synco:
     build: .
-    container_name: keep-alive-monitor
+    container_name: synco
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -11,6 +11,6 @@ services:
       - ./data:/app/data
     environment:
       - PORT=3000
-      - DB_NAME=/app/data/keepalive.db
+      - DB_NAME=/app/data/synco.db
       - AXIOS_TIMEOUT=5000
       - NODE_ENV=production

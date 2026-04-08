@@ -19,15 +19,13 @@ RUN npm ci --only=production && npm cache clean --force
 
 COPY --from=builder /app/dist ./dist
 
-COPY --from=builder /app/src/dashboard/views ./src/dashboard/views
-
 RUN mkdir -p /app/data && chown -R node:node /app
 
 USER node
 
 ENV NODE_ENV=production
 ENV PORT=3000
-ENV DB_NAME=/app/data/keepalive.db
+ENV DB_NAME=/app/data/synco.db
 ENV AXIOS_TIMEOUT=5000
 
 EXPOSE 3000

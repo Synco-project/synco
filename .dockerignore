@@ -3,7 +3,7 @@ dist
 .git
 .github
 data
-keepalive.db
+synco.db
 .env
 Dockerfile
 docker-compose.yml

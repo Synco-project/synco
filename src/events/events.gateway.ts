@@ -15,18 +15,18 @@ export class EventsGateway implements OnGatewayConnection {
   constructor(
     private jwtService: JwtService,
     private configService: ConfigService
-  ) {}
+  ) { }
 
   async handleConnection(client: Socket) {
     try {
       const cookieHeader = client.handshake.headers.cookie;
       if (!cookieHeader) throw new Error('No cookies attached');
-      
+
       const match = cookieHeader.match(/(?:^|;\s*)Authentication=([^;]*)/);
       const token = match ? match[1] : null;
       if (!token) throw new Error('No authentication token');
-      
-      const secret = this.configService.get<string>('JWT_SECRET') || 'keepalive_secret_key';
+
+      const secret = this.configService.get<string>('JWT_SECRET') || 'synco_secret_key';
       await this.jwtService.verifyAsync(token, { secret });
     } catch (error: unknown) {
       this.logger.warn(`Conexión WS rechazada: ${(error as Error).message}`);
