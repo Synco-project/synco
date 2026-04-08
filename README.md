@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🟢 Keep-Alive
+# 🟢 Synco
 
 **Self-hosted uptime monitoring for developers. Deploy in 60 seconds with Docker.**
 
