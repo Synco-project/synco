@@ -12,6 +12,8 @@ RUN npm run build
 
 FROM node:24-alpine
 
+RUN apk update && apk upgrade --no-cache
+
 WORKDIR /app
 
 COPY package*.json ./
