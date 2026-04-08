@@ -10,7 +10,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       useFactory: (configService: ConfigService) => ({
         type: 'sqlite',
         database: configService.get<string>('DB_NAME') || 'synco.db',
-        synchronize: configService.get<string>('NODE_ENV') !== 'production',
+        synchronize: true,
         autoLoadEntities: true,
       }),
     }),
